@@ -24,6 +24,7 @@
         android:id="@+id/seekBar"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -31,16 +32,38 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.569" />
 
-    <Button
-        android:id="@+id/buttonStart"
+    <ImageView
+        android:id="@+id/playImageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="btnPlay"
-        android:text="@string/startButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:srcCompat="@drawable/icon_play" />
+
+    <ImageView
+        android:id="@+id/stopImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:onClick="stopTimerImgView"
+        android:visibility="invisible"
+        app:layout_constraintStart_toEndOf="@+id/playImageView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:srcCompat="@drawable/ic_stop" />
+
+    <ImageView
+        android:id="@+id/pauseImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:onClick="pauseTimerImgView"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/playImageView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:srcCompat="@drawable/icon_pause" />
 
     <EditText
         android:id="@+id/editText4"
@@ -61,18 +84,18 @@
         app:layout_constraintTop_toTopOf="@+id/imageView" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageViewDown1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="5dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
-        app:layout_constraintEnd_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewDown2"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewDown2"
+        app:layout_constraintTop_toTopOf="@+id/imageViewDown2"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/ic_arrow_drop_down" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imageViewDown2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
@@ -84,27 +107,27 @@
         app:srcCompat="@drawable/ic_arrow_drop_down" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/imageViewDown3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewDown2"
+        app:layout_constraintStart_toEndOf="@+id/imageViewDown2"
+        app:layout_constraintTop_toTopOf="@+id/imageViewDown2"
         app:srcCompat="@drawable/ic_arrow_drop_down" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/imageViewUp1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="5dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
-        app:layout_constraintEnd_toStartOf="@+id/imageView7"
-        app:layout_constraintTop_toTopOf="@+id/imageView7"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewUp2"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewUp2"
+        app:layout_constraintTop_toTopOf="@+id/imageViewUp2"
         app:srcCompat="@drawable/ic_arrow_drop_up" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/imageViewUp2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="135dp"
@@ -115,13 +138,13 @@
         app:srcCompat="@drawable/ic_arrow_drop_up" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/imageViewUp3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
-        app:layout_constraintStart_toEndOf="@+id/imageView7"
-        app:layout_constraintTop_toTopOf="@+id/imageView7"
+        app:layout_constraintBottom_toBottomOf="@+id/imageViewUp2"
+        app:layout_constraintStart_toEndOf="@+id/imageViewUp2"
+        app:layout_constraintTop_toTopOf="@+id/imageViewUp2"
         app:srcCompat="@drawable/ic_arrow_drop_up" />
 
     <ProgressBar
@@ -135,31 +158,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonStart"
-        app:layout_constraintVertical_bias="0.15" />
-
-    <ImageView
-        android:id="@+id/stopImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="stopTimerImgView"
-        android:visibility="invisible"
-        android:layout_marginStart="1dp"
-        app:layout_constraintBottom_toBottomOf="@+id/buttonStart"
-        app:layout_constraintStart_toEndOf="@+id/buttonStart"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:srcCompat="@drawable/ic_stop" />
-
-    <ImageView
-        android:id="@+id/pauseImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="pauseTimerImgView"
-        android:visibility="invisible"
-        android:layout_marginEnd="1dp"
-        app:layout_constraintBottom_toBottomOf="@+id/buttonStart"
-        app:layout_constraintEnd_toStartOf="@+id/buttonStart"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:srcCompat="@drawable/icon_pause" />
+        app:layout_constraintTop_toBottomOf="@+id/playImageView"
+        app:layout_constraintVertical_bias="0.4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
