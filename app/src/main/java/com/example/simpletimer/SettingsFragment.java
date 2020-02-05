@@ -73,7 +73,7 @@ public class SettingsFragment extends PreferenceFragmentCompat
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
 
-        if(preference.getKey().equals("default_interval")){
+       /* if(preference.getKey().equals("default_interval")){
             String defaultIntervalString = (String) newValue;
 
             try {
@@ -82,7 +82,7 @@ public class SettingsFragment extends PreferenceFragmentCompat
                 Toast.makeText(getContext(), "Input this format 00:00:00", Toast.LENGTH_SHORT).show();
                 return false;
             }
-        }
-        return true;
+        }*/
+        return false;
     }
 }

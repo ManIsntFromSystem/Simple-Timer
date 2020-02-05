@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements SharedPreferences
     }
 
     public void stopTimerImgView(View view) {
-        myCountDownTimer.cancel();
+        myCountDownTimer.onFinish();
     }
 
     public void pauseTimerImgView(View view) {
